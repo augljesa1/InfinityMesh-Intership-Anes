@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LoginViewModel
+<div class="text-center">
+    <h1 class="display-4">Login</h1>
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input type="text" class="form-control" asp-for="Email"> 
+            <span  asp-validation-for="Email" class="form-text text-muted"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="text" asp-for="Password" class="form-control">
+            <span asp-validation-for="Password" class="form-text text-muted"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }
+</div>
